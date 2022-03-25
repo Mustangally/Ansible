@@ -1,0 +1,5 @@
+- hosts: k3s-Init
+  become: true
+  tasks:    
+    - name: install k3s as worker node
+      command: curl -sfL https://get.k3s.io | sh -s server --cluster-init --token=<token>

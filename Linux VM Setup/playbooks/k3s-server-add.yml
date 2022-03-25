@@ -1,0 +1,5 @@
+- hosts: k3s-masters
+  become: true
+  tasks:    
+    - name: install k3s as master node
+      command: curl -sfL https://get.k3s.io | sh -s server --token=<token> --server https://10.0.0.190:6443
